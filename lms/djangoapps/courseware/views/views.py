@@ -789,7 +789,7 @@ def course_about(request, course_id):
         if has_access(request.user, 'load', course):
             course_target = reverse(course_home_url_name(course.id), args=[text_type(course.id)])
         else:
-            course_target = reverse('about_course', args=[text_type(course.id)])
+            course_target = reverse('about_course', args=[text_type(course)])
 
         show_courseware_link = bool(
             (
